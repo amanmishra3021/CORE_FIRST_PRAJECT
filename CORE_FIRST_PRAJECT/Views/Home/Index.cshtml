@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List< CORE_FIRST_PRAJECT.Models.empmodel>
+<table class="table table-striped">
+     <tr>
+
+         <th scope="col">ID</th>
+         <th scope="col">NAME</th>
+         <th scope="col">EMAIL</th>
+         <th scope="col">DEPARTMENT</th>
+         <th scope="col">CONTACT</th>
+         <th scope="col">CITY</th>
+         <th scope="col">EDIT</th>
+         <th scope="col">DELETE</th>
+
+     </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Department</td>
+            <td>@item.Contact</td>
+            <td>@item.City</td>
+            <td><a href="@Url.Action("Edit","Home",new {item.Id })" class="btn btn-outline-warning"  >Edit</a></td>
+            <td><a href="@Url.Action("Delete","Home",new {item.Id})" class="btn btn-outline-danger" >Delete</a></td>
+
+
+
+        </tr>
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
